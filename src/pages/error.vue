@@ -1,10 +1,10 @@
 <script setup>
+
 </script>
 
 <template>
-  <router-view />
+    Error
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
 </style>
