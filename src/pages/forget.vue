@@ -1,5 +1,5 @@
 <template>
-    <div class="register">
+    <div class="forget">
         <div class="form">
             <div class="formcover">
                 <div class="logo">
@@ -7,37 +7,23 @@
                     <span>Company Name</span>
                 </div>
                 <div class="page" v-if="page == 1">
-                    <div class="title">Create an Account</div>
-                    <div class="desc">Fill in the requirements below to create you account</div>
+                    <div class="title">Forget Password?</div>
+                    <div class="desc">No worries, we'll send you reset instructions</div>
                     <div class="container">
                         <div class="inputrow">
                             <InputBox title="Email" :value="formData.email" @oninput="formData.email = $event" />
                         </div>
                         <div class="submitrow">
-                            <ButtonBox text="Next" @click="submitEmail" />
+                            <ButtonBox text="NEXT" @click="submitEmail" />
+                        </div>
+                        <div class="backrow">
+                            <span>Back to SignIn</span>
                         </div>
                     </div>
                 </div>
                 <div class="page" v-if="page == 2">
-                    <div class="title">Email Confirmation</div>
-                    <div class="desc">Please check is this your email</div>
-                    <div class="container">
-                        <div class="email">
-                            <div>
-                                <span>TT</span>tester@gmail.com
-                            </div>
-                        </div>
-                        <div class="submitrow">
-                            <ButtonBox text="Send OTP" @click="sendCodeToEmail" />
-                        </div>
-                        <div class="backrow">
-                            <span @click="backPage(1)">Back</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="page" v-if="page == 3">
                     <div class="title">OTP Verification</div>
-                    <div class="desc">Please check your email and enter the verification code below</div>
+                    <div class="desc">We sent the verification code to tester@gmail.com</div>
                     <div class="container">
                         <!-- <div class="resend">
                             <span>Resend OTP</span>
@@ -46,7 +32,7 @@
                             <InputBox type="otp" :value="formData.otp" @oninput="formData.otp = $event" />
                         </div>
                         <div class="submitrow">
-                            <ButtonBox text="SIGN IN" @click="emailVerify" />
+                            <ButtonBox text="NEXT" @click="emailVerify" />
                         </div>
                         <div class="backrow">
                             <span @click="backPage(2)">Back</span>
@@ -54,14 +40,14 @@
                     </div>
                 </div>
                 <div class="page" v-if="page == 4">
-                    <div class="title">Choose A Password</div>
+                    <div class="title">Choose New Password</div>
                     <div class="desc">Must be atleast 8 characters</div>
                     <div class="container">
                         <div class="inputrow">
-                            <InputBox title="Password" type="password" :value="formData.password" @oninput="formData.password = $event" />
+                            <InputBox title="New Password" type="password" :value="formData.password" @oninput="formData.password = $event" />
                         </div>
                         <div class="inputrow">
-                            <InputBox title="Confirm Password" type="password" :value="formData.confirm_password" @oninput="formData.confirm_password = $event" />
+                            <InputBox title="Confirm New Password" type="password" :value="formData.confirm_password" @oninput="formData.confirm_password = $event" />
                         </div>
                         <div class="submitrow">
                             <ButtonBox text="SIGN IN" @click="confirmRegister" />
@@ -136,7 +122,7 @@ function onOTP(data)
 </script>
 
 <style scoped lang="scss">
-.register {
+.forget {
     display            : block;
     position           : fixed;
     width              : 100%;

@@ -6,7 +6,7 @@
       <input type="text" :placeholder="placeholder" :value="textValue" @input="$emit('oninput', $event.target.value)" />
     </div>
     <div class="passbox" v-else-if="props.type === 'password'">
-      <input :type="showPassword ? 'text' : 'password'" :placeholder="props.placeholder" />
+      <input :type="showPassword ? 'text' : 'password'" :placeholder="props.placeholder" @input="$emit('oninput', $event.target.value)" />
       <span @click="showPassword = !showPassword"><i class="fi" :class="showPassword ? 'fi-rr-eye' : 'fi-rr-eye-crossed'"></i></span>
     </div>
     <div class="otpbox" v-else-if="props.type === 'otp'">
