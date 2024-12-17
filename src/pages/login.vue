@@ -1,4 +1,5 @@
 <script setup>
+import ButtonBox from '../components/button-box.vue';
 import InputBox from '../components/input-box.vue';
 import { ref } from 'vue';
 
@@ -6,7 +7,7 @@ const rememberMe = ref(false);
 </script>
 
 <template>
-    <div class="logon">
+    <div class="login">
         <div class="form">
             <div class="formcover">
                 <div class="logo">
@@ -30,6 +31,9 @@ const rememberMe = ref(false);
                         </div>
                         <div class="forget">Forget Password?</div>
                     </div>
+                    <div class="submitrow">
+                        <ButtonBox text="LOGIN NOW"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,7 +41,7 @@ const rememberMe = ref(false);
 </template>
 
 <style scoped lang="scss">
-.logon {
+.login {
     display            : block;
     position           : fixed;
     width              : 100%;
@@ -45,6 +49,9 @@ const rememberMe = ref(false);
     top                : 0;
     left               : 0;
     background-image   : url('../assets/images/logon-bg.png');
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    background-position: 50% 50%;
     user-select        : none;
     -webkit-user-select: none;
 
@@ -64,7 +71,7 @@ const rememberMe = ref(false);
             width             : 100%;
             box-sizing        : border-box;
             -webkit-box-sizing: border-box;
-            padding           : 60px 40px;
+            padding           : 60px 50px;
 
             & > .logo
             {
@@ -72,7 +79,7 @@ const rememberMe = ref(false);
                 position: relative;
                 width   : 100%;
                 overflow: hidden;
-                margin  : 0px 0px 60px 0px;
+                margin  : 0px 0px 80px 0px;
 
                 & > div
                 {
@@ -207,6 +214,13 @@ const rememberMe = ref(false);
                             text-decoration: underline;
                         }
                     }
+                }
+                & > .submitrow
+                {
+                    display : block;
+                    position: relative;
+                    width   : 100%;
+                    margin  : 30px 0px 0px 0px;
                 }
             }
         }
