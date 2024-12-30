@@ -38,7 +38,23 @@
             </div>
         </div>
     </div>
-    <router-view />
+    <div class="content">
+        <div class="header">
+            <div class="tab">
+                <div>All</div>
+                <div>Shared Folder</div>
+                <div>Favourite</div>
+            </div>
+            <div class="profile">
+                <div class="image"></div>
+                <div class="email">tester@test.com</div>
+            </div>
+            <div class="clear-row"></div>
+        </div>
+        <div class="container">
+            <router-view />  
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -50,12 +66,13 @@
 {
     display           : block;
     position          : fixed;
-    width             : 280px;
+    width             : 300px;
+    height            : 100%;
     top               : 0px;
     left              : 0px;
     box-sizing        : border-box;
     -webkit-box-sizing: border-box;
-    padding           : 20px;
+    padding           : 20px 0px 20px 20px;
 
     & > .logo
     {
@@ -93,6 +110,7 @@
         display             : block;
         position            : relative;
         width               : 100%;
+        height              : calc(100% - 58px);
         box-sizing          : border-box;
         -webkit-box-sizing  : border-box;
         border              : solid 1px #D9D9D9;
@@ -160,7 +178,7 @@
                     width             : 100%;
                     box-sizing        : border-box;
                     -webkit-box-sizing: border-box;
-                    padding           : 0px 0px 0px 34px;
+                    padding           : 0px 0px 0px 32px;
                     margin            : 0px 0px 8px 0px;
                     cursor            : pointer;
 
@@ -172,26 +190,128 @@
                     {
                         display              : block;
                         position             : absolute;
-                        width                : 24px;
-                        height               : 24px;
-                        border-radius        : 8px;
-                        -webkit-border-radius: 8px;
-                        background           : rgba(0,0,0,0.1);
+                        width                : 22px;
+                        height               : 22px;
+                        border-radius        : 6px;
+                        -webkit-border-radius: 6px;
+                        background           : #ffffff;
                         top                  : 0;
                         left                 : 0;
+                        box-sizing           : border-box;
+                        -webkit-box-sizing   : border-box;
+                        border               : solid 1px #444444;
                     }
                     & > span
                     {
                         display    : block;
                         position   : relative;
                         width      : 100%;
-                        height     : 24px;
-                        line-height: 24px;
+                        height     : 22px;
+                        line-height: 22px;
                         font-size  : 14px;
                     }
                 }
             }
         }
+    }
+}
+.content
+{
+    display           : block;
+    position          : fixed;
+    width             : calc(100% - 320px);
+    height            : 100%;
+    right             : 0px;
+    top               : 0;
+    box-sizing        : border-box;
+    -webkit-box-sizing: border-box;
+    padding           : 20px 20px 20px 0px;
+
+    & > .header
+    {
+        display : block;
+        position: relative;
+        width   : 100%;
+        margin  : 0px 0px 20px 0px;
+
+        & > .tab
+        {
+            display           : block;
+            position          : relative;
+            float             : left;
+            height            : 38px;
+            box-sizing        : border-box;
+            -webkit-box-sizing: border-box;
+            padding           : 10px 0px 0px 0px;
+
+            & div
+            {
+                display              : block;
+                position             : relative;
+                float                : left;
+                height               : 28px;
+                line-height          : 28px;
+                cursor               : pointer;
+                background           : #000000;
+                color                : #ffffff;
+                line-height          : 28px;
+                font-size            : 13px;
+                font-weight          : 600;
+                box-sizing           : border-box;
+                -webkit-box-sizing   : border-box;
+                padding              : 0px 14px;
+                border-radius        : 20px;
+                -webkit-border-radius: 20px;
+                margin               : 0px 12px 0px 0px;
+
+                &:last-child
+                {
+                    margin:0px;
+                }
+            }
+        }
+        & > .profile
+        {
+            display           : block;
+            position          : relative;
+            float             : right;
+            box-sizing        : border-box;
+            -webkit-box-sizing: border-box;
+            padding           : 10px 0px 0px 0px;
+
+            & > .image
+            {
+                display              : block;
+                position             : relative;
+                float                : left;
+                width                : 28px;
+                height               : 28px;
+                margin               : 0px 8px 0px 0px;
+                background           : #000000;
+                border-radius        : 50%;
+                -webkit-border-radius: 50%;
+            }
+            & > .email
+            {
+                display    : block;
+                position   : relative;
+                float      : left;
+                line-height: 28px;
+                height     : 28px;
+                font-size  : 13px;
+            }
+        }
+    }
+    & > .container
+    {
+        display              : block;
+        position             : relative;
+        width                : 100%;
+        box-sizing           : border-box;
+        -webkit-box-sizing   : border-box;
+        border               : solid 1px #D9D9D9;
+        border-radius        : 10px;
+        -webkit-border-radius: 10px;
     }
 }
 </style>

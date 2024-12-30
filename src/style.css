@@ -1,6 +1,7 @@
 @import url('./assets/css/flaticon.css');
 @import url('./assets/css/normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+@import 'swiper/css';
 
 body
 {
@@ -11,5 +12,18 @@ body
     background         : #F7F7F5;
     color              : #1F1E30;
     overflow-x         : hidden;
+}
+.clear-row
+{
+    display : block;
+    position: relative;
+    width   : 100%;
+    overflow: hidden;
+    float   : none;
+    clear   : both;
+}
+.swiper-slide.auto
+{
+    width:auto !important;
 }
 
